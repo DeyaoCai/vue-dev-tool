@@ -9,7 +9,6 @@ export function getInitRouter() { // 接收 route 列表
     arguments,
     routes => routes.forEach(route => (route.path = route.path.replace(/\/\//g, "/")))
   );
-  console.log(arguments, [].concat.apply([], arguments))
   return new Router({
     routes: [].concat.apply([], arguments)
   })
