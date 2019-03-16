@@ -29,7 +29,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       'vuc-ui': resolve('sections/vuc-ui/src'),
       '@vuc': resolve('sections/vuc/src'),
       'ctools': resolve('sections/ctools'),
-      'cUtils': resolve('sections/utils'),
+      'cdy-utils': resolve('sections/utils'),
       // 'ctools': resolve('sections/ctools'),
     }
   },
