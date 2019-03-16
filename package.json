@@ -8,6 +8,7 @@
     "push": "push --todev",
     "read": "ctools read",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "ndev": "webpack-dev-server --inline --progress --config build/webpack.ndev.conf.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "lol": "node ./serve/readLolYuanlhua.js",
     "test": "npm run unit",

@@ -1,4 +1,5 @@
-import vuc from "../sections/vuc/src/index.js";
+// import vuc from "../sections/vuc/src/index.js";
+import vuc from "@vuc";
 const ret = {
   store: [], router: [], callback: [],
 };

@@ -62,12 +62,22 @@ const interfaceConf = {
   succMsg: "write interfaces success!",
   exportMode: "node",
 }
+const utilsConf = {
+  inputPath: ["./sections/utils/src"],
+  outputPath: "./sections/utils/index.js",
+  fileReg: /\.js$/,
+  importReg: /\/sections\/utils/,
+  exportReg: "",
+  succMsg: "write utils success!",
+  exportMode: "es6",
+}
 module.exports = [
-  toolConf,
-  compConf,
-  unitConf,
-  wrapConf,
-  wrapUnitConf,
-  viewConf,
+  utilsConf
+  // toolConf,
+  // compConf,
+  // unitConf,
+  // wrapConf,
+  // wrapUnitConf,
+  // viewConf,
   // interfaceConf
 ];
