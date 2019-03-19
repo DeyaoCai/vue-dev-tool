@@ -71,13 +71,33 @@ const utilsConf = {
   succMsg: "write utils success!",
   exportMode: "es6",
 }
-module.exports = [
-  utilsConf
-  // toolConf,
-  // compConf,
-  // unitConf,
-  // wrapConf,
-  // wrapUnitConf,
-  // viewConf,
-  // interfaceConf
-];
+
+const vucUiConf = {
+  inputPath: ["./sections/vuc-ui/src/components"],
+  outputPath: "./sections/vuc-ui/index.js",
+  fileReg: /\.(vue|js)$/,
+  importReg: /\/sections\/vuc-ui/,
+  exportReg: "",
+  succMsg: "write vucUi success!",
+  exportMode: "es6",
+}
+module.exports = {
+  read: {
+    vucUi: [
+      vucUiConf
+    ],
+    cdyUtilsAndVucUi: [
+      utilsConf,
+      vucUiConf,
+    ],
+    ori: [
+      // toolConf,
+      // compConf,
+      // unitConf,
+      // wrapConf,
+      // wrapUnitConf,
+      // viewConf,
+      // interfaceConf
+    ]
+  }
+};

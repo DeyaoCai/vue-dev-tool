@@ -5,15 +5,15 @@
   "author": "deyaocai",
   "private": false,
   "scripts": {
+    "testCtools": "node ./sections/ctools/bin/ctools.js watch",
+    "testCtoolsRead": "node ./sections/ctools/bin/ctools.js read--vucUi-cdyUtilsAndVucUi",
+    "watch": "node ./script/watch.js",
     "push": "push --todev",
     "read": "ctools read",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "ndev": "webpack-dev-server --inline --progress --config build/webpack.ndev.conf.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "lol": "node ./serve/readLolYuanlhua.js",
     "test": "npm run unit",
-    "se": "node ./serve/index.js",
-    "ht": "node ./serve/ht.js",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js"
   },

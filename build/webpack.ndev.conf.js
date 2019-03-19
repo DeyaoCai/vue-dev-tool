@@ -26,7 +26,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'vuc-ui': resolve('sections/vuc-ui/src'),
+      'vuc-ui': resolve('sections/vuc-ui'),
       '@vuc': resolve('sections/vuc/src'),
       'ctools': resolve('sections/ctools'),
       'cdy-utils': resolve('sections/utils'),
