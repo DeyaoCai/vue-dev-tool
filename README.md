@@ -3,7 +3,7 @@
 > A Vue.js project dev tools
 
 ## Build Setup
-
+npm install ctools -g
 ``` bash
 # get codes
 npm run getCodes

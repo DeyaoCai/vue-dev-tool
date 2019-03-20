@@ -51,13 +51,18 @@ const packageJson = {
     "not ie <= 8"
   ],
   scripts: {
+
+    // 拉取代码
+    ctoolsGetCodes: "cdevtools getCodes",
+    ctoolsGetDemo: "cdevtools getDemo",
+    // 开启服务
+    devCdy: "webpack-dev-server --inline --progress --config build/webpack.dev.conf.cdy.js",
+    // 拉取代码 // 开发ctools 工具时使用
+    getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
+    getDemo: "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
     ht: "node ./sections/electron-pc-desktop/proxy/ht.js",
     desktopServe: "node ./sections/electron-pc-desktop/app.js",
     desktop: "electron ./sections/electron-pc-desktop/main.js",
-    // 拉取代码
-    getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
-    // 开启服务
-    devCdy: "webpack-dev-server --inline --progress --config build/webpack.dev.conf.cdy.js",
     // 单独的更新 package.json
     updatePackageJson: "node ./sections/ctools/bin/mergePackgeJson.js updatePackageJson",
     testCtools: "node ./sections/ctools/bin/ctools.js watch",
