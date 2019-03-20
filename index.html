@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="apple-mobile-web-app-capable" content="no">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>vue-c</title>
-    <script type="text/javascript">
-      (function(){
-        onresize=function(){
-          var html=document.getElementsByTagName("html")[0];
-          html.style.fontSize=html.offsetWidth/750*40+"px";
-        }
-        window.addEventListener('onbeforeunload', function(event) {
-            console.log(event);
-            // 点击回退时再向历史记录插入一条，以便阻止下一次点击回退
-            history.pushState("456", "45678", document.URL.split("?")[0]);
-        });
-        onresize();
-      })();
-    </script>
-  </head>
-  <body><div id="app"></div>
-  <audio id="audio"></audio></body>
-  <script>
-    try {
-      window.require = require;
-    } catch (e) {
-      console.log(`now runing in web env!`)
-    }
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>vue-c</title>
+  <script type="text/javascript">
   </script>
+</head>
+<body><div id="app"></div></body>
 </html>
