@@ -1,6 +1,6 @@
-//内部项目样式
+// 内部项目样式
 import '@common/assets/iconfont/iconfont.css'
 import '@common/assets/iconfont/iconfont.js'
 
-//项目集成
+// 项目集成
 import {init} from 'wxm-app'

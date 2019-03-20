@@ -1,28 +1,40 @@
+const fs = require("fs");
+const cwd = process.cwd();
+
+function getMainJsTemplateConf() {
+  const baseContent = fs.readFileSync(`${cwd}/ctools.conf/mainJsTemplate/mainJsTemp.vuc.js`);
+  return {
+    outPutPath: `/src/main.js`,
+    content: baseContent
+  }
+}
+
 const alias = {
-  "app-train": {src: `/src`, name: ``},
-  "app-common": {src: `/src`, name: ``},
-  "wxm-app": {src: ``, name: ``},
+  "vuc": {src: `/src`, name: ``},
+  "vuc-ui": {src: `/src`, name: ``},
+  "cdy-utils": {src: ``, name: ``},
+  "ctools": {src: ``, name: ``},
 };
 const defaultBranch = `master`;
 const repertoryList = [
   {
-    repertory: "http://gitserver.zt.com/etravel/tem-app-wxm.git",
-    branch: null,
+    repertory: "https://github.com/DeyaoCai/vuc.git",
+    branch: defaultBranch,
   },
   {
-    repertory: "http://gitserver.zt.com/etravel/tem-app-train.git",
-    branch: null,
+    repertory: "https://github.com/DeyaoCai/vuc-ui.git",
+    branch: defaultBranch,
   },
   {
-    repertory: "http://gitserver.zt.com/etravel/tem-app-common.git",
-    branch: null,
+    repertory: "https://github.com/DeyaoCai/cdy-utils.git",
+    branch: defaultBranch,
   }
 ];
 const packageJson = {
-  name: "app-common",
-  version: "2018.12.26-11-04-58",
-  description: "在途通用项目",
-  author: "pyy123 <133812813@qq.com>",
+  name: "vue-dev-tool",
+  version: "0.0.0",
+  description: "kaifapingtai",
+  author: "deyaocai",
   private: false,
   dependencies: {},
   devDependencies: {},
@@ -37,11 +49,23 @@ const packageJson = {
   ],
   scripts: {
     // 拉取代码
-    getCodes: "node ./tem-biz/ctools/bin/mergePackgeJson.js getCodes --branch-ISSUES-5765",
+    getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes --branch-ISSUES-5765",
     // 开启服务
     devCdy: "webpack-dev-server --inline --progress --config build/webpack.dev.conf.cdy.js",
     // 单独的更新 package.json
     updatePackageJson: "node ./tem-biz/ctools/bin/mergePackgeJson.js updatePackageJson",
+
+    testCtools: "node ./sections/ctools/bin/ctools.js watch",
+    testCtoolsRead: "node ./sections/ctools/bin/ctools.js read--vucUi-cdyUtilsAndVucUi",
+    watch: "node ./script/watch.js",
+    push: "push --todev",
+    read: "ctools read",
+    dev: "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    ndev: "webpack-dev-server --inline --progress --config build/webpack.ndev.conf.js",
+    unit: "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    test: "npm run unit",
+    lint: "eslint --ext .js,.vue src test/unit",
+    build: "node build/build.js"
   }
 };
 module.exports = {
@@ -49,4 +73,5 @@ module.exports = {
   repertoryList,
   packageJson,
   repertoryPath: `sections`,
+  getMainJsTemplateConf
 };

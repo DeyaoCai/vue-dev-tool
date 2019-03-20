@@ -1,3 +1,21 @@
+const fs = require("fs");
+const cwd = process.cwd();
+
+const excludeList = [`wxm-app`];
+function getMainJsTemplateConf(list, smallHump) {
+  list.map(item => item.name).filter(item => !excludeList.includes(item))
+  const baseContent = fs.readFileSync(`${cwd}/ctools.conf/mainJsTemplate/mainJsTemp.tem.js`);
+  const midContent = list.names.map(item =>
+    `import ${smallHump(item)} from "${item}";`
+  ).join("\n  ");
+  const tailContent = `init([${ list.names.map(item => smallHump(item)).join(",") }]);`;
+
+  return {
+    outPutPath: `/src/main.js`,
+    content: `${baseContent}${midContent}\n\n${tailContent}`
+  }
+}
+
 const alias = {
   "app-train": {src: `/src`, name: ``},
   "app-common": {src: `/src`, name: ``},
@@ -49,4 +67,5 @@ module.exports = {
   repertoryList,
   packageJson,
   repertoryPath: `sections`,
+  getMainJsTemplateConf,
 };
