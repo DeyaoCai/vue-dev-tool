@@ -55,7 +55,7 @@ const packageJson = {
   ],
   scripts: {
     // 拉取代码
-    getCodes: "node ./tem-biz/ctools/bin/mergePackgeJson.js getCodes --branch-ISSUES-5765",
+    getCodes: "node ./tem-biz/ctools/bin/mergePackgeJson.js getCodes",
     // 开启服务
     devCdy: "webpack-dev-server --inline --progress --config build/webpack.dev.conf.cdy.js",
     // 单独的更新 package.json
