@@ -4,6 +4,7 @@ const portfinder = require('portfinder');
 const merge = require('webpack-merge');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const buildConf = require('./webpack.conf.js');
+console.log(path.join(__dirname, `../${buildConf.repertoryPath}/${buildConf.configPath}`));
 const config =  require(path.join(__dirname, `../${buildConf.repertoryPath}/${buildConf.configPath}`));
 const utils = require('./utils');
 const baseWebpackConfig = require(path.join(__dirname, `../${buildConf.repertoryPath}/${buildConf.buildPath}`));
