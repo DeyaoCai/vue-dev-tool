@@ -33,10 +33,10 @@ const masterBranch = `master`;
 const defaultBranch = `master`;
 const issuesBranch = `ISSUES-5785`;
 const repertoryList = [
-  {
-    repertory: "https://github.com/DeyaoCai/ctools.git",
-    branch: masterBranch,
-  },
+  // {
+  //   repertory: "https://github.com/DeyaoCai/ctools.git",
+  //   branch: masterBranch,
+  // },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-wxm.git",
     branch: issuesBranch,
@@ -45,18 +45,18 @@ const repertoryList = [
     repertory: "http://gitserver.zt.com/etravel/tem-app-train.git",
     branch: issuesBranch,
   },
-  {
-    repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
-    branch: issuesBranch,
-  },
-  {
-    repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
-    branch: issuesBranch,
-  },
-  {
-    repertory: "http://gitserver.zt.com/etravel/tem-app-car.git",
-    branch: issuesBranch,
-  },
+  // {
+  //   repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
+  //   branch: issuesBranch,
+  // },
+  // {
+  //   repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
+  //   branch: issuesBranch,
+  // },
+  // {
+  //   repertory: "http://gitserver.zt.com/etravel/tem-app-car.git",
+  //   branch: issuesBranch,
+  // },
   // {
   //   repertory: "http://gitserver.zt.com/etravel/tem-app-common.git",
   //   branch: defaultBranch,
