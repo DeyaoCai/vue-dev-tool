@@ -19,7 +19,7 @@ const alias = {
   "cdy-utils": {src: ``, name: ``},
   "ctools": {src: ``, name: ``},
 };
-const  buildPath = "./vuc/build/webpack.dev.conf.js";
+const  buildPath = "./vuc/build/webpack.dev.conf.ctools.js";
 const  configPath = "./vuc/config";
 const defaultBranch = `master`;
 const repertoryList = [
