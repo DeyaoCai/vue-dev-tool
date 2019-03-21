@@ -3,12 +3,12 @@ const cwd = process.cwd();
 
 const excludeList = [`wxm-app`];
 function getMainJsTemplateConf(list, smallHump) {
-  list.map(item => item.name).filter(item => !excludeList.includes(item))
+  const names = list.map(item => item.name).filter(item => !excludeList.includes(item));
   const baseContent = fs.readFileSync(`${cwd}/ctools.conf/mainJsTemplate/mainJsTemp.tem.js`);
-  const midContent = list.names.map(item =>
+  const midContent = names.map(item =>
     `import ${smallHump(item)} from "${item}";`
   ).join("\n  ");
-  const tailContent = `init([${ list.names.map(item => smallHump(item)).join(",") }]);`;
+  const tailContent = `init([${ names.map(item => smallHump(item)).join(",") }]);`;
 
   return {
     outPutPath: `/src/main.js`,
@@ -23,6 +23,10 @@ const alias = {
 };
 const defaultBranch = `master`;
 const repertoryList = [
+  {
+    repertory: "https://github.com/DeyaoCai/ctools.git",
+    branch: defaultBranch,
+  },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-wxm.git",
     branch: null,
@@ -55,11 +59,25 @@ const packageJson = {
   ],
   scripts: {
     // 拉取代码
-    getCodes: "node ./tem-biz/ctools/bin/mergePackgeJson.js getCodes",
+    ctoolsGetCodes: "cdevtools getCodes",
+    ctoolsGetDemo: "cdevtools getDemo",
     // 开启服务
     devCdy: "webpack-dev-server --inline --progress --config build/webpack.dev.conf.cdy.js",
+    // 拉取代码 // 开发ctools 工具时使用
+    getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
+    getDemo: "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
+    ht: "node ./sections/electron-pc-desktop/proxy/ht.js",
+    desktopServe: "node ./sections/electron-pc-desktop/app.js",
+    desktop: "electron ./sections/electron-pc-desktop/main.js",
     // 单独的更新 package.json
-    updatePackageJson: "node ./tem-biz/ctools/bin/mergePackgeJson.js updatePackageJson",
+    updatePackageJson: "node ./sections/ctools/bin/mergePackgeJson.js updatePackageJson",
+    testCtools: "node ./sections/ctools/bin/ctools.js watch",
+    testCtoolsRead: "node ./sections/ctools/bin/ctools.js read--vucUi-cdyUtilsAndVucUi",
+    watch: "node ./script/watch.js",
+    push: "push --todev",
+    read: "ctools read",
+    ndev: "webpack-dev-server --inline --progress --config build/webpack.ndev.conf.js",
+    unit: "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
   }
 };
 module.exports = {

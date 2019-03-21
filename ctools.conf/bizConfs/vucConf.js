@@ -1,7 +1,7 @@
 const fs = require("fs");
 const cwd = process.cwd();
 
-function getMainJsTemplateConf() {
+function getMainJsTemplateConf(a) {
   return {
     outPutPath: `/src/main.js`,
     content: fs.readFileSync(`${cwd}/ctools.conf/mainJsTemplate/mainJsTemp.vuc.js`)
@@ -16,6 +16,10 @@ const alias = {
 };
 const defaultBranch = `master`;
 const repertoryList = [
+  {
+    repertory: "https://github.com/DeyaoCai/ctools.git",
+      branch: defaultBranch,
+  },
   {
     repertory: "https://github.com/DeyaoCai/electron-pc-desktop.git",
     branch: defaultBranch,

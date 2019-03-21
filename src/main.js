@@ -1,18 +1,11 @@
-import Vue from 'vue';
-import App from './App';
-import confs from './index.js';
-import {init} from "cdy-utils";
-const {getInitRouter, getInitVuex} = init;
-const router = getInitRouter.apply(null, confs.router);
-const store = getInitVuex.apply(null, confs.store);
-Vue.config.productionTip = false;
-confs.callback && confs.callback.forEach(fn => {
-  fn && fn({router, store})
-});
-export default new Vue({
-  el: '#app',
-  store: store,
-  router,
-  components: { App },
-  template: '<App/>'
-});
+// 内部项目样式
+import '@common/assets/iconfont/iconfont.css'
+import '@common/assets/iconfont/iconfont.js'
+
+// 项目集成
+import {init} from 'wxm-app'
+import ctools from "ctools";
+  import appTrain from "app-train";
+  import appCommon from "app-common";
+
+init([ctools,appTrain,appCommon]);
