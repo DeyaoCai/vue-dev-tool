@@ -19,6 +19,8 @@ const alias = {
   "cdy-utils": {src: ``, name: ``},
   "ctools": {src: ``, name: ``},
 };
+const  buildPath = "./vuc/build/webpack.dev.conf.js";
+const  configPath = "./vuc/config";
 const defaultBranch = `master`;
 const repertoryList = [
   {
@@ -64,7 +66,7 @@ const packageJson = {
     ctoolsGetCodes: "cdevtools getCodes",
     ctoolsGetDemo: "cdevtools getDemo",
     // 开启服务
-    devCdy: "webpack-dev-server --inline --progress --config build/webpack.dev.conf.cdy.js",
+    devCdy: "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.cdy.js",
     // 拉取代码 // 开发ctools 工具时使用
     getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
     getDemo: "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
@@ -84,6 +86,8 @@ const packageJson = {
 };
 module.exports = {
   alias,
+  buildPath,
+  configPath,
   repertoryList,
   packageJson,
   repertoryPath: `sections`,
