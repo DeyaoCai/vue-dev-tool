@@ -1,7 +1,6 @@
 const fs = require("fs");
 const cwd = process.cwd();
-
-const excludeList = [`wxm-app`];
+const excludeList = [`wxm-app`, `ctools`];
 function getMainJsTemplateConf(list, smallHump) {
   const names = list.map(item => item.name).filter(item => !excludeList.includes(item));
   const baseContent = fs.readFileSync(`${cwd}/ctools.conf/mainJsTemplate/mainJsTemp.tem.js`);
@@ -16,31 +15,55 @@ function getMainJsTemplateConf(list, smallHump) {
   }
 }
 
+function getIndexHtmlTemplateConf() {
+  return {
+    outPutPath: `/index.html`,
+    content: fs.readFileSync(`${cwd}/ctools.conf/indexHtmlTemplate/index.tem.html`)
+  }
+}
 const alias = {
   "app-train": {src: `/src`, name: ``},
+  "app-flight": {src: `/src`, name: ``},
+  "app-hotel": {src: `/src`, name: ``},
+  "app-car": {src: `/src`, name: ``},
   "app-common": {src: `/src`, name: ``},
   "wxm-app": {src: ``, name: ``},
 };
+const masterBranch = `master`;
 const defaultBranch = `master`;
+const issuesBranch = `ISSUES-5785`;
 const repertoryList = [
   {
     repertory: "https://github.com/DeyaoCai/ctools.git",
-    branch: defaultBranch,
+    branch: masterBranch,
   },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-wxm.git",
-    branch: null,
+    branch: issuesBranch,
   },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-train.git",
-    branch: null,
+    branch: issuesBranch,
   },
   {
-    repertory: "http://gitserver.zt.com/etravel/tem-app-common.git",
-    branch: null,
-  }
+    repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
+    branch: issuesBranch,
+  },
+  {
+    repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
+    branch: issuesBranch,
+  },
+  {
+    repertory: "http://gitserver.zt.com/etravel/tem-app-car.git",
+    branch: issuesBranch,
+  },
+  // {
+  //   repertory: "http://gitserver.zt.com/etravel/tem-app-common.git",
+  //   branch: defaultBranch,
+  // }
 ];
 const packageJson = {
+  main: "./src/main.js",
   name: "app-common",
   version: "2018.12.26-11-04-58",
   description: "在途通用项目",
@@ -86,4 +109,5 @@ module.exports = {
   packageJson,
   repertoryPath: `sections`,
   getMainJsTemplateConf,
+  getIndexHtmlTemplateConf
 };

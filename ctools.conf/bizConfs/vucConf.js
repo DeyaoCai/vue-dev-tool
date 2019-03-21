@@ -7,7 +7,12 @@ function getMainJsTemplateConf(a) {
     content: fs.readFileSync(`${cwd}/ctools.conf/mainJsTemplate/mainJsTemp.vuc.js`)
   }
 }
-
+function getIndexHtmlTemplateConf() {
+  return {
+    outPutPath: `/index.html`,
+    content: fs.readFileSync(`${cwd}/ctools.conf/indexHtmlTemplate/index.vuc.html`)
+  }
+}
 const alias = {
   "vuc": {src: `/src`, name: ``},
   "vuc-ui": {src: `/src`, name: ``},
@@ -55,7 +60,6 @@ const packageJson = {
     "not ie <= 8"
   ],
   scripts: {
-
     // 拉取代码
     ctoolsGetCodes: "cdevtools getCodes",
     ctoolsGetDemo: "cdevtools getDemo",
@@ -83,5 +87,6 @@ module.exports = {
   repertoryList,
   packageJson,
   repertoryPath: `sections`,
-  getMainJsTemplateConf
+  getMainJsTemplateConf,
+  getIndexHtmlTemplateConf
 };

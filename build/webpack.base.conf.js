@@ -19,15 +19,17 @@ const createLintingRule = () => ({
   }
 })
 
-module.exports = {
+var env = process.env.NODE_ENV;
+var webpackConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
+    //"babel-polyfill":"babel-polyfill",
     app: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
+    publicPath: (env === 'production' || env === 'dev' || env === 'test' || env === 'uat' || env === 'gray')
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
@@ -35,12 +37,17 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@vuc': resolve('sections/vuc/src'),
+      '@common': resolve('src'),
+      '@flight':'app-flight/src',
+      '@hotel':'app-hotel/src',
+      '@train':'app-train/src',
+      '@car':'app-car/src',
+      '@er':'app-expense/src'
     }
   },
   module: {
     rules: [
-//    ...(config.dev.useEslint ? [createLintingRule()] : []),
+      /*...(config.dev.useEslint ? [createLintingRule()] : []),*/
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -49,7 +56,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('node_modules/webpack-dev-server/client'),resolve('node_modules/wxm-app/src'),resolve('node_modules/app-flight/src'),resolve('node_modules/app-hotel/src'), resolve('node_modules/app-train/src'), resolve('node_modules/app-car/src'), resolve('node_modules/app-expense/src')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -90,3 +97,11 @@ module.exports = {
     child_process: 'empty'
   }
 }
+
+const vuxLoader = require('vux-loader')
+module.exports = vuxLoader.merge(webpackConfig, {
+  plugins: ['vux-ui','duplicate-style',{
+    name: 'less-theme',
+    path: 'node_modules/wxm-app/src/assets/vux-theme.less'
+  }]
+})

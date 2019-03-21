@@ -1,7 +1,9 @@
 'use strict'
 require('./check-versions')()
 
-process.env.NODE_ENV = 'production'
+//process.env.NODE_ENV = 'production'
+//npm run dev --env=product
+process.env.NODE_ENV = process.env.npm_config_env || 'production';
 
 const ora = require('ora')
 const rm = require('rimraf')
@@ -16,6 +18,11 @@ spinner.start()
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
+  /*var curTime = new Date().getTime();
+  fs.writeFile(config.build.assetsRoot + '/version.json', 'versioncallback('+curTime+')', err => {
+    if (err) throw err
+  })*/
+
   webpack(webpackConfig, (err, stats) => {
     spinner.stop()
     if (err) throw err
