@@ -1,8 +1,11 @@
 import Vue from 'vue';
 import App from './App';
-import vuc from "@vuc";
+// import vuc from "@vuc";
+import vuc from "@vuc-dev-platform";
+
 import {init} from "cdy-utils";
 
+alert(`here run in root!`)
 const {getInitRouter, getInitVuex} = init;
 const confs = {
   store: [], router: [], callback: [],

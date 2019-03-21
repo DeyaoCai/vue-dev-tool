@@ -1,26 +1,3 @@
-const fs = require("fs");
-const cwd = process.cwd();
-const excludeList = [`wxm-app`, `ctools`];
-function getMainJsTemplateConf(list, smallHump) {
-  const names = list.map(item => item.name).filter(item => !excludeList.includes(item));
-  const baseContent = fs.readFileSync(`${cwd}/ctools.conf/mainJsTemplate/mainJsTemp.tem.js`);
-  const midContent = names.map(item =>
-    `import ${smallHump(item)} from "${item}";`
-  ).join("\n  ");
-  const tailContent = `init([${ names.map(item => smallHump(item)).join(",") }]);`;
-
-  return {
-    outPutPath: `/src/main.js`,
-    content: `${baseContent}${midContent}\n\n${tailContent}`
-  }
-}
-
-function getIndexHtmlTemplateConf() {
-  return {
-    outPutPath: `/index.html`,
-    content: fs.readFileSync(`${cwd}/ctools.conf/indexHtmlTemplate/index.tem.html`)
-  }
-}
 const alias = {
   "app-train": {src: `/src`, name: ``},
   "app-flight": {src: `/src`, name: ``},
@@ -33,10 +10,11 @@ const masterBranch = `master`;
 const defaultBranch = `master`;
 const issuesBranch = `ISSUES-5785`;
 const repertoryList = [
-  // {
-  //   repertory: "https://github.com/DeyaoCai/ctools.git",
-  //   branch: masterBranch,
-  // },
+  {
+    repertory: "https://github.com/DeyaoCai/ctools.git",
+    branch: masterBranch,
+    disabled: true,
+  },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-wxm.git",
     branch: issuesBranch,
@@ -45,22 +23,26 @@ const repertoryList = [
     repertory: "http://gitserver.zt.com/etravel/tem-app-train.git",
     branch: issuesBranch,
   },
-  // {
-  //   repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
-  //   branch: issuesBranch,
-  // },
-  // {
-  //   repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
-  //   branch: issuesBranch,
-  // },
-  // {
-  //   repertory: "http://gitserver.zt.com/etravel/tem-app-car.git",
-  //   branch: issuesBranch,
-  // },
-  // {
-  //   repertory: "http://gitserver.zt.com/etravel/tem-app-common.git",
-  //   branch: defaultBranch,
-  // }
+  {
+    repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
+    branch: issuesBranch,
+    disabled: true,
+  },
+  {
+    repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
+    branch: issuesBranch,
+    disabled: true,
+  },
+  {
+    repertory: "http://gitserver.zt.com/etravel/tem-app-car.git",
+    branch: issuesBranch,
+    disabled: true,
+  },
+  {
+    repertory: "http://gitserver.zt.com/etravel/tem-app-common.git",
+    branch: defaultBranch,
+    disabled: true,
+  }
 ];
 const packageJson = {
   main: "./src/main.js",
@@ -108,6 +90,5 @@ module.exports = {
   repertoryList,
   packageJson,
   repertoryPath: `sections`,
-  getMainJsTemplateConf,
-  getIndexHtmlTemplateConf
+  getTemplateConfs: "templatFn.tem.js",
 };

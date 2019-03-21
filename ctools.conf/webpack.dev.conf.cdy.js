@@ -4,10 +4,11 @@ const portfinder = require('portfinder');
 const merge = require('webpack-merge');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const buildConf = require('./webpack.conf.js');
-console.log(path.join(__dirname, `../${buildConf.repertoryPath}/${buildConf.configPath}`));
-const config =  require(path.join(__dirname, `../${buildConf.repertoryPath}/${buildConf.configPath}`));
 const utils = require('./utils');
-const baseWebpackConfig = require(path.join(__dirname, `../${buildConf.repertoryPath}/${buildConf.buildPath}`));
+const config =  require(path.join(__dirname, `../${buildConf.repertoryPath}/${buildConf.configPath}`));
+const baseWebpackConfig = buildConf.getTemplateConfs ?
+  require(path.join(__dirname, `../build/${buildConf.buildPath.split(/\//).pop()}`)):
+  require(path.join(__dirname, `../${buildConf.repertoryPath}/${buildConf.buildPath}`));
 
 let ctoolsWebpackConf;
 try {

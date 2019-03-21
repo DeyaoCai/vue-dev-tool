@@ -1,47 +1,49 @@
-const fs = require("fs");
-const cwd = process.cwd();
-
-function getMainJsTemplateConf(a) {
-  return {
-    outPutPath: `/src/main.js`,
-    content: fs.readFileSync(`${cwd}/ctools.conf/mainJsTemplate/mainJsTemp.vuc.js`)
-  }
-}
-function getIndexHtmlTemplateConf() {
-  return {
-    outPutPath: `/index.html`,
-    content: fs.readFileSync(`${cwd}/ctools.conf/indexHtmlTemplate/index.vuc.html`)
-  }
-}
 const alias = {
   "vuc": {src: `/src`, name: ``},
   "vuc-ui": {src: `/src`, name: ``},
   "cdy-utils": {src: ``, name: ``},
   "ctools": {src: ``, name: ``},
 };
-const  buildPath = "./vuc/build/webpack.dev.conf.ctools.js";
-const  configPath = "./vuc/config";
+// const mainRepertory = `vuc-dev-platform`;
+const mainRepertory = `vuc`;
+const buildPath = `./${mainRepertory}/build/webpack.dev.conf.ctools.js`;
+const  configPath = `./${mainRepertory}/config`;
 const defaultBranch = `master`;
 const repertoryList = [
   {
+    repertory: "https://github.com/DeyaoCai/vuc-dev-platform.git",
+    branch: defaultBranch,
+    disabled: false,
+  },
+  {
     repertory: "https://github.com/DeyaoCai/ctools.git",
-      branch: defaultBranch,
+    branch: defaultBranch,
+    disabled: false,
+  },
+  {
+    repertory: "https://github.com/DeyaoCai/ctools.git",
+    branch: defaultBranch,
+    disabled: false,
   },
   {
     repertory: "https://github.com/DeyaoCai/electron-pc-desktop.git",
     branch: defaultBranch,
+    disabled: false,
   },
   {
     repertory: "https://github.com/DeyaoCai/vuc.git",
     branch: defaultBranch,
+    disabled: false,
   },
   {
     repertory: "https://github.com/DeyaoCai/vuc-ui.git",
     branch: defaultBranch,
+    disabled: false,
   },
   {
     repertory: "https://github.com/DeyaoCai/cdy-utils.git",
     branch: defaultBranch,
+    disabled: false,
   }
 ];
 const packageJson = {
@@ -91,6 +93,5 @@ module.exports = {
   repertoryList,
   packageJson,
   repertoryPath: `sections`,
-  getMainJsTemplateConf,
-  getIndexHtmlTemplateConf
+  // getTemplateConfs: "templatFn.vuc.js",
 };
