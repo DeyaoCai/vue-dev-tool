@@ -7,7 +7,7 @@ function join(paths){
 const excludeList = [`wxm-app`, `ctools`];
 module.exports = function getTemplateConfs(list, smallHump) {
   const names = list.map(item => item.name).filter(item => !excludeList.includes(item));
-  const baseContent = fs.readFileSync(join(`./ctools.conf/mainJsTemplate/mainJsTemp.tem.js`));
+  const baseContent = fs.readFileSync(join(`../ctools.conf/mainJsTemplate/mainJsTemp.tem.js`));
   const midContent = names.map(item =>
     `import ${smallHump(item)} from "${item}";`
   ).join("\n  ");
@@ -17,6 +17,6 @@ module.exports = function getTemplateConfs(list, smallHump) {
     content: `${baseContent}${midContent}\n\n${tailContent}`
   }, {
     outPutPath: `/index.html`,
-    content: fs.readFileSync(join(`./ctools.conf/indexHtmlTemplate/index.tem.html`))
+    content: fs.readFileSync(join(`../ctools.conf/indexHtmlTemplate/index.tem.html`))
   }];
 };
