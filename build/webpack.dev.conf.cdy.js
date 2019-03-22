@@ -14,7 +14,7 @@ const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 let ctoolsWebpackConf;
 try {
-  ctoolsWebpackConf = require('./webpack.conf.json');
+  ctoolsWebpackConf = require('../ctools.conf/webpack.conf.json');
 } catch (e){ ctoolsWebpackConf = {} }
 const devWebpackConfig = merge(baseWebpackConfig, ctoolsWebpackConf, {
   module: {

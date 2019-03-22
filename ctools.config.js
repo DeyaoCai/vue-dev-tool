@@ -81,14 +81,63 @@ const vucUiConf = {
   succMsg: "write vucUi success!",
   exportMode: "es6",
 }
+
+const wxmApp = [
+  {
+    inputPath: ["./sections/tem-app-wxm/src/tools"],
+    outputPath: "./sections/tem-app-wxm/src/tools.js",
+    fileReg: /\.(vue|js)$/,
+    importReg: /\/sections\/tem-app-wxm\/src/,
+    exportReg: "",
+    succMsg: "write wxmApp tools success!",
+    exportMode: "es6",
+  },
+  {
+    inputPath: ["./sections/tem-app-wxm/src/tools", "./sections/tem-app-wxm/src/components/base"],
+    outputPath: "./sections/tem-app-wxm/src/baseComponents.js",
+    fileReg: /\.(vue|js)$/,
+    importReg: /\/sections\/tem-app-wxm\/src/,
+    exportReg: "",
+    succMsg: "write wxmApp baseComponents success!",
+    exportMode: "es6",
+  },
+  {
+    inputPath: ["./sections/tem-app-wxm/src/tools", "./sections/tem-app-wxm/src/components/base", "./sections/tem-app-wxm/src/components/units"],
+    outputPath: "./sections/tem-app-wxm/src/units.js",
+    fileReg: /\.(vue|js)$/,
+    importReg: /\/sections\/tem-app-wxm\/src/,
+    exportReg: "",
+    succMsg: "write wxmApp units success!",
+    exportMode: "es6",
+  },
+  {
+    inputPath: ["./sections/tem-app-wxm/src/tools", "./sections/tem-app-wxm/src/components/base", "./sections/tem-app-wxm/src/components/units","./sections/tem-app-wxm/src/components/wrap"],
+    outputPath: "./sections/tem-app-wxm/src/wrap.js",
+    fileReg: /\.(vue|js)$/,
+    importReg: /\/sections\/tem-app-wxm\/src/,
+    exportReg: "",
+    succMsg: "write wxmApp wrap success!",
+    exportMode: "es6",
+  },
+  {
+    inputPath: ["./sections/tem-app-wxm/src/tools", "./sections/tem-app-wxm/src/components/base", "./sections/tem-app-wxm/src/components/units","./sections/tem-app-wxm/src/components/wrap", "./sections/tem-app-wxm/src/components/wrapUnit"],
+    outputPath: "./sections/tem-app-wxm/src/wrapUnit.js",
+    fileReg: /\.(vue|js)$/,
+    importReg: /\/sections\/tem-app-wxm\/src/,
+    exportReg: "",
+    succMsg: "write wxmApp wrapUnit success!",
+    exportMode: "es6",
+  },
+];
 module.exports = {
   read: {
+    wxmApp,
     vucUi: [
-      vucUiConf
+      // vucUiConf
     ],
     cdyUtilsAndVucUi: [
-      utilsConf,
-      vucUiConf,
+      // utilsConf,
+      // vucUiConf,
     ],
     ori: [
       // toolConf,

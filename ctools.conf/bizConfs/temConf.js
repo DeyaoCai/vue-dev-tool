@@ -22,11 +22,12 @@ const repertoryList = [
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-train.git",
     branch: issuesBranch,
+    disabled: true,
   },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
     branch: issuesBranch,
-    disabled: true,
+    disabled: false,
   },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
