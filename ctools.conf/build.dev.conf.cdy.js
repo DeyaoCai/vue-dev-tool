@@ -16,4 +16,4 @@ try {
 } catch (e){ ctoolsWebpackConf = {} }
 const baseWebpackConfig = require(path.join(prodBuildPath,`./webpack.base.conf.js`));
 baseWebpackConfig.resolve = ctoolsWebpackConf.resolve;
-require(path.join(prodBuildPath, './build.js'));
+module.exports = require(path.join(prodBuildPath, './build.js'));
