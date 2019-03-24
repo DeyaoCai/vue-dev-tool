@@ -1,17 +1,16 @@
-const alias = {
-  "vuc": {src: `/src`, name: ``},
-  "vuc-ui": {src: `/src`, name: ``},
-  "cdy-utils": {src: ``, name: ``},
-  "ctools": {src: ``, name: ``},
-};
-// const mainRepertory = `vuc-dev-platform`;
-const mainRepertory = `vuc`;
-const buildPath = `./${mainRepertory}/build/webpack.dev.conf.ctools.js`;
-const  configPath = `./${mainRepertory}/config`;
+const mainRepertory = `vuc-dev-platform`;
+// const mainRepertory = `vuc`;
+
 const defaultBranch = `master`;
+const repertoryPath = `sections`;
+const outPutPath = `./${repertoryPath}/Tape-frontend`;
 const repertoryList = [
   {
-    repertory: "https://github.com/DeyaoCai/vuc-dev-platform.git",
+    repertory: "https://gitee.com/all-raines/Tape-frontend.git",
+    branch: defaultBranch,
+    disabled: false,
+  },{
+    repertory: "https://github.com/DeyaoCai/proxy.git",
     branch: defaultBranch,
     disabled: false,
   },
@@ -44,7 +43,11 @@ const repertoryList = [
     repertory: "https://github.com/DeyaoCai/cdy-utils.git",
     branch: defaultBranch,
     disabled: false,
-  }
+  }, {
+    repertory: "https://github.com/DeyaoCai/vuc-dev-platform.git",
+    branch: defaultBranch,
+    disabled: false,
+  },
 ];
 const packageJson = {
   name: "vue-dev-tool",
@@ -64,14 +67,13 @@ const packageJson = {
     "not ie <= 8"
   ],
   scripts: {
-    // 拉取代码
-    ctoolsGetCodes: "cdevtools getCodes",
-    ctoolsGetDemo: "cdevtools getDemo",
     // 开启服务
     devCdy: "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.cdy.js",
     // 拉取代码 // 开发ctools 工具时使用
     getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
     getDemo: "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
+    build: "node ./ctools.conf/build.dev.conf.cdy.js",
+    proxy: "node ./sections/proxy/app.js",
     ht: "node ./sections/electron-pc-desktop/proxy/ht.js",
     desktopServe: "node ./sections/electron-pc-desktop/app.js",
     desktop: "electron ./sections/electron-pc-desktop/main.js",
@@ -80,18 +82,18 @@ const packageJson = {
     testCtools: "node ./sections/ctools/bin/ctools.js watch",
     testCtoolsRead: "node ./sections/ctools/bin/ctools.js read--vucUi-cdyUtilsAndVucUi",
     watch: "node ./script/watch.js",
-    push: "push --todev",
-    read: "ctools read",
-    ndev: "webpack-dev-server --inline --progress --config build/webpack.ndev.conf.js",
+    read: "node ./sections/ctools/bin/ctools.js read",
     unit: "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    // 拉取代码
+    push: "push --todev",
+    ctoolsGetCodes: "cdevtools getCodes",
+    ctoolsGetDemo: "cdevtools getDemo",
   }
 };
 module.exports = {
-  alias,
-  buildPath,
-  configPath,
+  mainRepertory,
+  outPutPath,
   repertoryList,
   packageJson,
-  repertoryPath: `sections`,
-  // getTemplateConfs: "templatFn.vuc.js",
+  repertoryPath,
 };

@@ -63,10 +63,10 @@ const interfaceConf = {
   exportMode: "node",
 }
 const utilsConf = {
-  inputPath: ["./sections/utils/src"],
-  outputPath: "./sections/utils/index.js",
+  inputPath: ["./sections/cdy-utils/src"],
+  outputPath: "./sections/cdy-utils/index.js",
   fileReg: /\.js$/,
-  importReg: /\/sections\/utils/,
+  importReg: /\/sections\/cdy-utils/,
   exportReg: "",
   succMsg: "write utils success!",
   exportMode: "es6",
@@ -131,12 +131,12 @@ const wxmApp = [
 ];
 module.exports = {
   read: {
-    wxmApp,
+    // wxmApp,
     vucUi: [
       // vucUiConf
     ],
     cdyUtilsAndVucUi: [
-      // utilsConf,
+      utilsConf,
       // vucUiConf,
     ],
     ori: [
