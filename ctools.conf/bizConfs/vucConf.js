@@ -75,13 +75,12 @@ const packageJson = {
     build: "node ./ctools.conf/build.dev.conf.cdy.js",
     proxy: "node ./sections/proxy/app.js",
     ht: "node ./sections/electron-pc-desktop/proxy/ht.js",
-    desktopServe: "node ./sections/electron-pc-desktop/app.js",
     desktop: "electron ./sections/electron-pc-desktop/main.js",
     // 单独的更新 package.json
     updatePackageJson: "node ./sections/ctools/bin/mergePackgeJson.js updatePackageJson",
     testCtools: "node ./sections/ctools/bin/ctools.js watch",
     testCtoolsRead: "node ./sections/ctools/bin/ctools.js read--vucUi-cdyUtilsAndVucUi",
-    watch: "node ./script/watch.js",
+    watch: "node ./sections/ctools/bin//watch.js",
     read: "node ./sections/ctools/bin/ctools.js read",
     unit: "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     // 拉取代码
