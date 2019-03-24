@@ -1,4 +1,6 @@
 'use strict';
+const cProcess =require("child_process");
+cProcess.execSync("npm run getCodes");
 const path = require('path');
 const buildConf = require('./webpack.conf.js');
 const cwd = process.cwd();
@@ -15,5 +17,11 @@ try {
   ctoolsWebpackConf = require('./webpack.conf.json');
 } catch (e){ ctoolsWebpackConf = {} }
 const baseWebpackConfig = require(path.join(prodBuildPath,`./webpack.base.conf.js`));
-baseWebpackConfig.resolve = ctoolsWebpackConf.resolve;
-module.exports = require(path.join(prodBuildPath, './build.js'));
+if (baseWebpackConfig.resolve) {
+  Object.keys(ctoolsWebpackConf.resolve.alias).forEach(item=>{
+    baseWebpackConfig.resolve.alias[item] = ctoolsWebpackConf.resolve.alias[item];
+  })
+} else {
+  baseWebpackConfig.resolve = ctoolsWebpackConf.resolve;
+}
+require(path.join(prodBuildPath, './build.js'));
