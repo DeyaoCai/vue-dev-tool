@@ -1,7 +1,7 @@
 'use strict';
 const path = require('path');
-const cProcess =require("child_process");
-cProcess.execSync("npm run getCodes");
+// const cProcess =require("child_process");
+// cProcess.execSync("npm run getCodes");
 const buildConf = require('./webpack.conf.js');
 const cwd = process.cwd();
 const midPath = `./${buildConf.repertoryPath}/${buildConf.mainRepertory}`;
@@ -20,6 +20,6 @@ if (baseWebpackConfig.resolve) {
   baseWebpackConfig.resolve = ctoolsWebpackConf.resolve;
 }
 if (buildConf.getTemplateConfs){
-  baseWebpackConfig.entry.app = "./src/main.js";
+  baseWebpackConfig.entry.app = path.join(cwd, "./src/main.js");
 }
 module.exports = require(path.join(prodBuildPath, './webpack.dev.conf.js'));

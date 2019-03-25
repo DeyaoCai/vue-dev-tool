@@ -1,4 +1,4 @@
-const mainRepertory = `vuc-dev-platform`;
+const mainRepertory = `tem-app-common`;
 const alias = {
   "app-train": {src: `/src`, name: ``},
   "app-flight": {src: `/src`, name: ``},
@@ -28,7 +28,7 @@ const repertoryList = [
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
     branch: issuesBranch,
-    disabled: false,
+    disabled: true,
   },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
@@ -68,7 +68,7 @@ const packageJson = {
     // 开启服务
     devCdy: "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.js",
     // 拉取代码 // 开发ctools 工具时使用
-    getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-temConf --entry-temConfss",
+    getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-temConf",
     getDemo: "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
     build: "node ./ctools.conf/build.dev.conf.js",
     proxy: "node ./sections/proxy/app.js",
