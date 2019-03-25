@@ -1,6 +1,6 @@
 'use strict';
-const cProcess =require("child_process");
-cProcess.execSync("npm run getCodes");
+// const cProcess =require("child_process");
+// cProcess.execSync("npm run getCodes");
 const path = require('path');
 const buildConf = require('./webpack.conf.js');
 const cwd = process.cwd();
@@ -12,6 +12,7 @@ const config =  require(prodConfigPath);
 
 config.build.index = path.join(cwd, buildConf.outPutPath, `./index.html`);
 config.build.assetsRoot = path.join(cwd, buildConf.outPutPath);
+console.log(config.build.index)
 let ctoolsWebpackConf;
 try {
   ctoolsWebpackConf = require('./webpack.conf.json');
