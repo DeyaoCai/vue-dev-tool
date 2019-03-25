@@ -1,3 +1,4 @@
+const mainRepertory = `vuc-dev-platform`;
 const alias = {
   "app-train": {src: `/src`, name: ``},
   "app-flight": {src: `/src`, name: ``},
@@ -22,7 +23,7 @@ const repertoryList = [
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-train.git",
     branch: issuesBranch,
-    disabled: true,
+    disabled: false,
   },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
@@ -87,6 +88,7 @@ const packageJson = {
   }
 };
 module.exports = {
+  mainRepertory,
   alias,
   repertoryList,
   packageJson,

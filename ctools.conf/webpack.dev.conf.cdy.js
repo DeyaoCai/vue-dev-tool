@@ -19,4 +19,7 @@ if (baseWebpackConfig.resolve) {
 } else {
   baseWebpackConfig.resolve = ctoolsWebpackConf.resolve;
 }
+if (buildConf.getTemplateConfs){
+  baseWebpackConfig.entry.app = "./src/main.js";
+}
 module.exports = require(path.join(prodBuildPath, './webpack.dev.conf.js'));
