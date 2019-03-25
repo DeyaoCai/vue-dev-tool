@@ -9,7 +9,8 @@ const alias = {
 };
 const masterBranch = `master`;
 const defaultBranch = `master`;
-const issuesBranch = `ISSUES-5785`;
+const issuesBranch = `master`;
+// const issuesBranch = `ISSUES-5785`;
 const repertoryList = [
   {
     repertory: "https://github.com/DeyaoCai/ctools.git",
@@ -37,6 +38,11 @@ const repertoryList = [
   },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-car.git",
+    branch: issuesBranch,
+    disabled: true,
+  },
+  {
+    repertory: "http://gitserver.zt.com/ec/ec-app-expense.git",
     branch: issuesBranch,
     disabled: true,
   },

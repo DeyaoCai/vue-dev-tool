@@ -43,7 +43,8 @@ const repertoryList = [
     repertory: "https://github.com/DeyaoCai/cdy-utils.git",
     branch: defaultBranch,
     disabled: false,
-  }, {
+  },
+  {
     repertory: "https://github.com/DeyaoCai/vuc-dev-platform.git",
     branch: defaultBranch,
     disabled: false,

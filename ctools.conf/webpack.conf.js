@@ -10,8 +10,8 @@
      return getProcessArgvCommon(entryReg, argvEntry);
    }
  }
-// const defEntry = "vucConf";
- const defEntry = "temConf";
+const defEntry = "vucConf";
+ // const defEntry = "temConf";
 const entry = getProcessArgv(/--entry-/)(defEntry);
 module.exports = require({
   temConf: "./bizConfs/temConf.js",
