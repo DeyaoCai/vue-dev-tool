@@ -45,7 +45,7 @@ module.exports = {
     "scripts": {
       "ctoolsGetCodes": "cdevtools getCodes",
       "ctoolsGetDemo": "cdevtools getDemo",
-      "devCdy": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.cdy.js",
+      "devCdy": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
       "getCodes": "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
       "getDemo": "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
       "ht": "node ./sections/electron-pc-desktop/proxy/ht.js",

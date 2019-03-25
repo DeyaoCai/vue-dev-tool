@@ -65,26 +65,26 @@ const packageJson = {
     "not ie <= 8"
   ],
   scripts: {
-    // 拉取代码
-    ctoolsGetCodes: "cdevtools getCodes",
-    ctoolsGetDemo: "cdevtools getDemo",
     // 开启服务
-    devCdy: "webpack-dev-server --inline --progress --config build/webpack.dev.conf.cdy.js",
+    devCdy: "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.js",
     // 拉取代码 // 开发ctools 工具时使用
-    getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
+    getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-temConf --entry-temConfss",
     getDemo: "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
+    build: "node ./ctools.conf/build.dev.conf.js",
+    proxy: "node ./sections/proxy/app.js",
     ht: "node ./sections/electron-pc-desktop/proxy/ht.js",
-    desktopServe: "node ./sections/electron-pc-desktop/app.js",
     desktop: "electron ./sections/electron-pc-desktop/main.js",
     // 单独的更新 package.json
     updatePackageJson: "node ./sections/ctools/bin/mergePackgeJson.js updatePackageJson",
     testCtools: "node ./sections/ctools/bin/ctools.js watch",
     testCtoolsRead: "node ./sections/ctools/bin/ctools.js read--vucUi-cdyUtilsAndVucUi",
-    watch: "node ./script/watch.js",
-    push: "push --todev",
-    read: "ctools read",
-    ndev: "webpack-dev-server --inline --progress --config build/webpack.ndev.conf.js",
+    watch: "node ./sections/ctools/bin//watch.js",
+    read: "node ./sections/ctools/bin/ctools.js read",
     unit: "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    // 拉取代码
+    push: "push --todev",
+    ctoolsGetCodes: "cdevtools getCodes",
+    ctoolsGetDemo: "cdevtools getDemo",
   }
 };
 module.exports = {

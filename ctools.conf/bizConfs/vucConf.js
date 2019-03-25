@@ -68,11 +68,11 @@ const packageJson = {
   ],
   scripts: {
     // 开启服务
-    devCdy: "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.cdy.js",
+    devCdy: "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.js",
     // 拉取代码 // 开发ctools 工具时使用
     getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
     getDemo: "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
-    build: "node ./ctools.conf/build.dev.conf.cdy.js",
+    build: "node ./ctools.conf/build.dev.conf.js",
     proxy: "node ./sections/proxy/app.js",
     ht: "node ./sections/electron-pc-desktop/proxy/ht.js",
     desktop: "electron ./sections/electron-pc-desktop/main.js",
