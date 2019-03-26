@@ -1,4 +1,4 @@
-const mainRepertory = `tem-app-train`;
+const mainRepertory = `tem-app-common`;
 const alias = {
   "app-train": {src: `/src`, name: ``},
   "app-flight": {src: `/src`, name: ``},
@@ -13,52 +13,46 @@ const defaultBranch = `master`;
 const issuesBranch = `master`;
 // const issuesBranch = `ISSUES-5785`;
 const repertoryList = [
-  {
-    repertory: "https://github.com/DeyaoCai/ctools.git",
-    branch: masterBranch,
-    disabled: true,
-  },
-  {
+  {// 公共工具组件库
     repertory: "http://gitserver.zt.com/etravel/tem-app-wxm.git",
     branch: issuesBranch,
   },
-  {
+  {// 火车项目
     repertory: "http://gitserver.zt.com/etravel/tem-app-train.git",
     branch: issuesBranch,
     disabled: true,
   },
-  {
+  {// 飞机项目
     repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
     branch: issuesBranch,
     disabled: true,
   },
-  {
+  {// 酒店项目
     repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
     branch: issuesBranch,
     disabled: true,
   },
-  {
+  {// 用车项目
     repertory: "http://gitserver.zt.com/etravel/tem-app-car.git",
     branch: issuesBranch,
     disabled: true,
   },
-  {
+  {// 费控项目
     repertory: "http://gitserver.zt.com/ec/ec-app-expense.git",
     branch: issuesBranch,
     disabled: false,
   },
-  {
+  {// 入口项目
     repertory: "http://gitserver.zt.com/etravel/tem-app-common.git",
     branch: defaultBranch,
     disabled: false,
   }
 ];
 const packageJson = {
-  main: "./src/main.js",
   name: "app-common",
-  version: "2018.12.26-11-04-58",
-  description: "在途通用项目",
-  author: "pyy123 <133812813@qq.com>",
+  version: "0.0.0",
+  description: "",
+  author: "",
   private: false,
   dependencies: {},
   devDependencies: {},
@@ -99,6 +93,6 @@ module.exports = {
   alias,
   repertoryList,
   packageJson,
-  repertoryPath: `sections`,
+  repertoryPath: `tem-apps`,
   // getTemplateConfs: "templatFn.tem.js",
 };

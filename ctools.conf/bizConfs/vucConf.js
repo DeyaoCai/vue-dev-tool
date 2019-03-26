@@ -1,9 +1,7 @@
-const mainRepertory = `vuc-dev-platform`;
-// const mainRepertory = `vuc`;
-
+const mainRepertory = `vuc`;
 const defaultBranch = `master`;
-const repertoryPath = `sections`;
-const outPutPath = `./${repertoryPath}/Tape-frontend`;
+const repertoryPath = `woke-space-vuc`;
+const outPutPath = `./${repertoryPath}/proxy/expresServer/www`;
 const repertoryList = [
   {
     repertory: "https://gitee.com/all-raines/Tape-frontend.git",
@@ -11,11 +9,6 @@ const repertoryList = [
     disabled: false,
   },{
     repertory: "https://github.com/DeyaoCai/proxy.git",
-    branch: defaultBranch,
-    disabled: false,
-  },
-  {
-    repertory: "https://github.com/DeyaoCai/ctools.git",
     branch: defaultBranch,
     disabled: false,
   },
@@ -82,7 +75,7 @@ const packageJson = {
     updatePackageJson: "node ./sections/ctools/bin/mergePackgeJson.js updatePackageJson",
     testCtools: "node ./sections/ctools/bin/ctools.js watch",
     testCtoolsRead: "node ./sections/ctools/bin/ctools.js read--vucUi-cdyUtilsAndVucUi",
-    watch: "node ./sections/ctools/bin//watch.js",
+    watch: "node ./sections/ctools/bin/watch.js",
     read: "node ./sections/ctools/bin/ctools.js read",
     unit: "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     // 拉取代码

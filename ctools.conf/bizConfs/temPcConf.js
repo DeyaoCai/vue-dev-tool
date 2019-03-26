@@ -1,4 +1,4 @@
-const mainRepertory = `tem-pc-train`;
+const mainRepertory = `tem-pc-common`;
 const alias = {
   "pc-train": {src: `/src`, name: ``},
   "pc-flight": {src: `/src`, name: ``},
@@ -12,37 +12,32 @@ const defaultBranch = `test`;
 // const issuesBranch = `test`;
 const issuesBranch = `dev`;
 const repertoryList = [
-  {
-    repertory: "https://github.com/DeyaoCai/ctools.git",
-    branch: defaultBranch,
-    disabled: true,
-  },{
+  {// tem pc 公共工具组件库
     repertory: "http://gitserver.zt.com/etravel/tem-pc-wxm.git",
     branch: defaultBranch,
     disabled: false,
   },
-  {
+  {// 费控
     repertory: "http://gitserver.zt.com/ec/ec-pc-expense.git",
     branch: defaultBranch,
     disabled: true,
   },
-  {
+  {// 火车
     repertory: "http://gitserver.zt.com/front/tem-pc-train.git",
     branch: issuesBranch,
     disabled: false,
   },
-  {
+  {// 入口
     repertory: "http://gitserver.zt.com/etravel/tem-pc-common.git",
     branch: defaultBranch,
     disabled: false,
   }
 ];
 const packageJson = {
-  main: "./src/main.js",
-  name: "app-common",
-  version: "2018.12.26-11-04-58",
-  description: "在途通用项目",
-  author: "pyy123 <133812813@qq.com>",
+  name: "tem-pcs",
+  version: "0",
+  description: "",
+  author: "",
   private: false,
   dependencies: {},
   devDependencies: {},
@@ -83,6 +78,6 @@ module.exports = {
   alias,
   repertoryList,
   packageJson,
-  repertoryPath: `sections`,
-  getTemplateConfs: "templatFn.tem.js",
+  repertoryPath: `tem-apps`,
+  // getTemplateConfs: "templatFn.tem.js",
 };

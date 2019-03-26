@@ -1,59 +1,29 @@
 const mainRepertory = `vuc-dev-platform`;
-// const mainRepertory = `vuc`;
 
 const defaultBranch = `master`;
-const repertoryPath = `sections`;
+const repertoryPath = `woke-space-vuc`;
 const outPutPath = `./${repertoryPath}/proxy/expresServer/www`;
 const repertoryList = [
-  {
-    repertory: "https://gitee.com/all-raines/Tape-frontend.git",
-    branch: defaultBranch,
-    disabled: false,
-  },{
-    repertory: "https://github.com/DeyaoCai/proxy.git",
-    branch: defaultBranch,
-    disabled: false,
-  },
-  {
-    repertory: "https://github.com/DeyaoCai/ctools.git",
-    branch: defaultBranch,
-    disabled: false,
-  },
-  {
-    repertory: "https://github.com/DeyaoCai/ctools.git",
-    branch: defaultBranch,
-    disabled: false,
-  },
-  {
-    repertory: "https://github.com/DeyaoCai/electron-pc-desktop.git",
-    branch: defaultBranch,
-    disabled: false,
-  },
-  {
+  {// vuc 手机web项目
     repertory: "https://github.com/DeyaoCai/vuc.git",
     branch: defaultBranch,
     disabled: false,
   },
-  {
+  {// vue-ui vuc UI 库
     repertory: "https://github.com/DeyaoCai/vuc-ui.git",
     branch: defaultBranch,
     disabled: false,
   },
-  {
-    repertory: "https://github.com/DeyaoCai/cdy-utils.git",
-    branch: defaultBranch,
-    disabled: false,
-  },
-  {
-    repertory: "https://github.com/DeyaoCai/vuc-dev-platform.git",
+  {// vuc 工具库
+    repertory: "https://github.com/DeyaoCai/cdy-tools.git",
     branch: defaultBranch,
     disabled: false,
   },
 ];
 const packageJson = {
-  name: "vue-dev-tool",
+  name: "vuc-group",
   version: "0.0.0",
-  description: "kaifapingtai",
+  description: "",
   author: "deyaocai",
   private: false,
   dependencies: {},
