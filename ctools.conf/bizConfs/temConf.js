@@ -1,9 +1,10 @@
-const mainRepertory = `tem-app-common`;
+const mainRepertory = `tem-app-train`;
 const alias = {
   "app-train": {src: `/src`, name: ``},
   "app-flight": {src: `/src`, name: ``},
   "app-hotel": {src: `/src`, name: ``},
   "app-car": {src: `/src`, name: ``},
+  "app-expense": {src: `/src`, name: ``},
   "app-common": {src: `/src`, name: ``},
   "wxm-app": {src: ``, name: ``},
 };
@@ -24,22 +25,22 @@ const repertoryList = [
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-train.git",
     branch: issuesBranch,
-    disabled: false,
+    disabled: true,
   },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
     branch: issuesBranch,
-    disabled: false,
+    disabled: true,
   },
-  // {
-  //   repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
-  //   branch: issuesBranch,
-  //   disabled: false,
-  // },
+  {
+    repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
+    branch: issuesBranch,
+    disabled: true,
+  },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-car.git",
     branch: issuesBranch,
-    disabled: false,
+    disabled: true,
   },
   {
     repertory: "http://gitserver.zt.com/ec/ec-app-expense.git",
@@ -99,5 +100,5 @@ module.exports = {
   repertoryList,
   packageJson,
   repertoryPath: `sections`,
-  getTemplateConfs: "templatFn.tem.js",
+  // getTemplateConfs: "templatFn.tem.js",
 };

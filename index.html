@@ -13,35 +13,35 @@
 <script>
   // new VConsole();
   //版本检查:服务器与localStorage 是否一致
-  function checkVersion() {
-    var ajax = new XMLHttpRequest();
-    ajax.open('get', window.location.origin + '/common/static/version.json?_t=' + new Date().getTime());
-    ajax.send();
-    ajax.onreadystatechange = function () {
-      if (ajax.readyState == 4) {
-        if (ajax.status == 200) {
-          try {
-            var v = JSON.parse(ajax.responseText)
-            if (v.version != localStorage.getItem('_version')) {
-              localStorage.setItem('_version', v.version);
-              let path = location.href;
-              path += (path.indexOf('?') == -1 ? '?' : '&') + '_t=' + new Date().getTime()
-              location.replace(path);
-            }
-          }catch (e) {
-            console.error(e)
-          }
-        } else {
-          setTimeout(checkVersion, 200)
-        }
-      }
-    };
-  }
-
-  checkVersion();
-  String.prototype.startsWith || (String.prototype.startsWith = function (a) {
-    return this.indexOf(a) === 0
-  })
+  // function checkVersion() {
+  //   var ajax = new XMLHttpRequest();
+  //   ajax.open('get', window.location.origin + '/common/static/version.json?_t=' + new Date().getTime());
+  //   ajax.send();
+  //   ajax.onreadystatechange = function () {
+  //     if (ajax.readyState == 4) {
+  //       if (ajax.status == 200) {
+  //         try {
+  //           var v = JSON.parse(ajax.responseText)
+  //           if (v.version != localStorage.getItem('_version')) {
+  //             localStorage.setItem('_version', v.version);
+  //             let path = location.href;
+  //             path += (path.indexOf('?') == -1 ? '?' : '&') + '_t=' + new Date().getTime()
+  //             location.replace(path);
+  //           }
+  //         }catch (e) {
+  //           console.error(e)
+  //         }
+  //       } else {
+  //         setTimeout(checkVersion, 200)
+  //       }
+  //     }
+  //   };
+  // }
+  //
+  // checkVersion();
+  // String.prototype.startsWith || (String.prototype.startsWith = function (a) {
+  //   return this.indexOf(a) === 0
+  // })
 </script>
 <body>
 <div id="app">
