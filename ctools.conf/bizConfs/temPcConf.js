@@ -1,4 +1,4 @@
-const mainRepertory = `tem-pc-common`;
+const mainRepertory = `tem-pc-train`;
 const alias = {
   "pc-train": {src: `/src`, name: ``},
   "pc-flight": {src: `/src`, name: ``},
@@ -9,8 +9,8 @@ const alias = {
 };
 const masterBranch = `master`;
 const defaultBranch = `test`;
-const issuesBranch = `test`;
-// const issuesBranch = `ISSUES-5785`;
+// const issuesBranch = `test`;
+const issuesBranch = `dev`;
 const repertoryList = [
   {
     repertory: "https://github.com/DeyaoCai/ctools.git",
@@ -24,16 +24,17 @@ const repertoryList = [
   {
     repertory: "http://gitserver.zt.com/ec/ec-pc-expense.git",
     branch: defaultBranch,
+    disabled: true,
   },
-  // {
-  //   repertory: "http://gitserver.zt.com/front/tem-pc-train.git",
-  //   branch: masterBranch,
-  //   disabled: false,
-  // },
+  {
+    repertory: "http://gitserver.zt.com/front/tem-pc-train.git",
+    branch: issuesBranch,
+    disabled: false,
+  },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-pc-common.git",
     branch: defaultBranch,
-    disabled: true,
+    disabled: false,
   }
 ];
 const packageJson = {

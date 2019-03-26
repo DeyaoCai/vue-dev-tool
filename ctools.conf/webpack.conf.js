@@ -11,9 +11,9 @@
    }
  }
 // const defEntry = "vucConf";
-// const defEntry = "temConf";
 // const defEntry =  "platFormConf";
-const defEntry =  "temPcConf";
+ const defEntry = "temConf";
+// const defEntry =  "temPcConf";
 
 const entry = getProcessArgv(/--entry-/)(defEntry);
 module.exports = require({

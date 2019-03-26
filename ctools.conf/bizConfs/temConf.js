@@ -29,27 +29,27 @@ const repertoryList = [
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-flight.git",
     branch: issuesBranch,
-    disabled: true,
+    disabled: false,
   },
-  {
-    repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
-    branch: issuesBranch,
-    disabled: true,
-  },
+  // {
+  //   repertory: "http://gitserver.zt.com/etravel/tem-app-hotel.git",
+  //   branch: issuesBranch,
+  //   disabled: false,
+  // },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-car.git",
     branch: issuesBranch,
-    disabled: true,
+    disabled: false,
   },
   {
     repertory: "http://gitserver.zt.com/ec/ec-app-expense.git",
     branch: issuesBranch,
-    disabled: true,
+    disabled: false,
   },
   {
     repertory: "http://gitserver.zt.com/etravel/tem-app-common.git",
     branch: defaultBranch,
-    disabled: true,
+    disabled: false,
   }
 ];
 const packageJson = {

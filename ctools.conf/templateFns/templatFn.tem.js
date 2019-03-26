@@ -4,7 +4,7 @@ const path = require("path");
 function join(paths){
   return path.join(cwd, paths)
 }
-const excludeList = [`wxm-app`, `ctools`];
+const excludeList = [`wxm-pc`, `wxm-app`, `ctools`];
 module.exports = function getTemplateConfs(list, smallHump) {
   const names = list.map(item => item.name).filter(item => !excludeList.includes(item));
   const baseContent = fs.readFileSync(join(`../ctools.conf/mainJsTemplate/mainJsTemp.tem.js`));

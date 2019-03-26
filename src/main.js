@@ -4,12 +4,10 @@ import '@common/assets/iconfont/iconfont.js'
 
 // 项目集成
 import {init} from 'wxm-pc'
-import wxmPc from "wxm-pc";
-import pcExpense from "pc-expense";
-// import pcCommon from "pc-common";
+import appTrain from "app-train";
+  import appFlight from "app-flight";
+  import appCar from "app-car";
+  import appExpense from "app-expense";
+  import appCommon from "app-common";
 
-init([
-  wxmPc,
-  pcExpense,
-  // pcCommon
-]);
+init([appTrain,appFlight,appCar,appExpense,appCommon]);
