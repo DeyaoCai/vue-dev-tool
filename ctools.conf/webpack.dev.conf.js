@@ -1,7 +1,5 @@
 'use strict';
 const path = require('path');
-// const cProcess =require("child_process");
-// cProcess.execSync("npm run getCodes");
 const buildConf = require('./webpack.conf.js');
 const cwd = process.cwd();
 const midPath = `./${buildConf.repertoryPath}/${buildConf.mainRepertory}`;

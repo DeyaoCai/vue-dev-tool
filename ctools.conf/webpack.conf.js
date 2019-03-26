@@ -10,9 +10,9 @@
      return getProcessArgvCommon(entryReg, argvEntry);
    }
  }
-// const defEntry = "vucConf";
+const defEntry = "vucConf";
 // const defEntry =  "platFormConf";
- const defEntry = "temConf";
+//  const defEntry = "temConf";
 // const defEntry =  "temPcConf";
 
 const entry = getProcessArgv(/--entry-/)(defEntry);

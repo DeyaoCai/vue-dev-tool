@@ -1,9 +1,22 @@
 {
-  "name": "vue-dev-tool",
-  "version": "0.0.0",
-  "description": "kaifapingtai",
-  "author": "deyaocai",
+  "name": "vuc",
+  "version": "2019.01.10-00-46-04",
+  "description": "A Vue.js project",
+  "main": "./src/index.js",
+  "author": "",
   "private": false,
+  "scripts": {
+    "push": "push --todev",
+    "read": "ctools read",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "lol": "node ./serve/readLolYuanlhua.js",
+    "test": "npm run unit",
+    "se": "node ./serve/index.js",
+    "ht": "node ./serve/ht.js",
+    "lint": "eslint --ext .js,.vue src test/unit",
+    "build": "node build/build.js"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
@@ -87,25 +100,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "scripts": {
-    "devCdy": "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.js",
-    "getDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence",
-    "getCodes": "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
-    "getDemo": "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
-    "build": "node ./ctools.conf/build.dev.conf.js",
-    "proxy": "node ./sections/proxy/app.js",
-    "appExpress": "node ./sections/proxy/appExpress.js",
-    "ht": "node ./sections/electron-pc-desktop/proxy/ht.js",
-    "desktop": "electron ./sections/electron-pc-desktop/main.js",
-    "updatePackageJson": "node ./sections/ctools/bin/mergePackgeJson.js updatePackageJson",
-    "testCtools": "node ./sections/ctools/bin/ctools.js watch",
-    "testCtoolsRead": "node ./sections/ctools/bin/ctools.js read--vucUi-cdyUtilsAndVucUi",
-    "watch": "node ./sections/ctools/bin/watch.js",
-    "read": "node ./sections/ctools/bin/ctools.js read",
-    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "push": "push --todev",
-    "ctoolsGetCodes": "cdevtools getCodes",
-    "ctoolsGetDemo": "cdevtools getDemo"
-  }
+  ]
 }

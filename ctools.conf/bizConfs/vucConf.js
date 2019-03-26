@@ -61,8 +61,9 @@ const packageJson = {
     "not ie <= 8"
   ],
   scripts: {
-    // 开启服务
     devCdy: "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.js",
+    // 开启服务
+    getDependence: "node ./sections/ctools/bin/mergePackgeJson.js getDependence",
     // 拉取代码 // 开发ctools 工具时使用
     getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
     getDemo: "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
