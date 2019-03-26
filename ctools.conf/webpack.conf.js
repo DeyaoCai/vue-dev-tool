@@ -12,9 +12,12 @@
  }
 // const defEntry = "vucConf";
 // const defEntry = "temConf";
-const defEntry =  "platFormConf";
+// const defEntry =  "platFormConf";
+const defEntry =  "temPcConf";
+
 const entry = getProcessArgv(/--entry-/)(defEntry);
 module.exports = require({
+  temPcConf: "./bizConfs/temPcConf.js",
   temConf: "./bizConfs/temConf.js",
   platFormConf: "./bizConfs/platFormConf.js",
   vucConf: "./bizConfs/vucConf.js"

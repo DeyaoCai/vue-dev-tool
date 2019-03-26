@@ -11,6 +11,9 @@ module.exports = function getTemplateConfs(list, smallHump) {
   const midContent = names.map(item =>
     `import ${smallHump(item)} from "${item}";`
   ).join("\n  ");
+  const midSecContent = names.map(item =>
+    `import ${smallHump(item)} from "${item}";`
+  ).join("\n  ");
   const tailContent = `init([${ names.map(item => smallHump(item)).join(",") }]);`;
   return [{
     outPutPath: `/src/main.js`,

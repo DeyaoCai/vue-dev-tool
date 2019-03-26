@@ -3,7 +3,13 @@ import '@common/assets/iconfont/iconfont.css'
 import '@common/assets/iconfont/iconfont.js'
 
 // 项目集成
-import {init} from 'wxm-app'
-import appTrain from "app-train";
+import {init} from 'wxm-pc'
+import wxmPc from "wxm-pc";
+import pcExpense from "pc-expense";
+// import pcCommon from "pc-common";
 
-init([appTrain]);
+init([
+  wxmPc,
+  pcExpense,
+  // pcCommon
+]);

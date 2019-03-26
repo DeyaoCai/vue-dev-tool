@@ -130,7 +130,7 @@ const wxmApp = [
   },
 ];
 module.exports = {
-  hot: "./sections/vuc-dev-platform",
+  // hot: "./sections/vuc-dev-platform",
   read: {
     // wxmApp,
     vucUi: [
