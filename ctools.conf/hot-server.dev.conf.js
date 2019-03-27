@@ -1,27 +1,35 @@
 'use strict';
 const path = require('path');
 const cwd = process.cwd();
-console.log(cwd)
 const buildConf = require('./webpack.conf.js');
 // 工作空间根目录
-// const prodBuildPath = path.join(cwd, `./${buildConf.mainRepertory}/build`);
-const prodBuildPath = path.join(cwd, `./build`);
+const prodBuildPath = path.join(cwd, `./${buildConf.mainRepertory}/build`);
 // 植入别名
+let alias;
+try {
+  alias = require('./alias.json');
+} catch (e){ alias = {} }
 let ctoolsWebpackConf;
 try {
   ctoolsWebpackConf = require('./webpack.conf.json');
 } catch (e){ ctoolsWebpackConf = {} }
 const baseWebpackConfig = require(path.join(prodBuildPath,`./webpack.base.conf.js`));
 if (baseWebpackConfig.resolve) {
+  Object.keys(alias.resolve.alias).forEach(item=>{
+    baseWebpackConfig.resolve.alias[item] = alias.resolve.alias[item];
+  })
   Object.keys(ctoolsWebpackConf.resolve.alias).forEach(item=>{
     baseWebpackConfig.resolve.alias[item] = ctoolsWebpackConf.resolve.alias[item];
   })
 } else {
-  baseWebpackConfig.resolve = ctoolsWebpackConf.resolve;
+  baseWebpackConfig.resolve = alias.resolve;
+  Object.keys(ctoolsWebpackConf.resolve.alias).forEach(item=>{
+    baseWebpackConfig.resolve.alias[item] = ctoolsWebpackConf.resolve.alias[item];
+  })
 }
 // 如果需要 可以 修改入口文件
 // buildConf.getTemplateConfs 在getCodes 时 会根据键值去获取模块，用来生成新的入口文件（这个模块一个返回 {pathBasedOnRoot, content}列表）
 if (buildConf.getTemplateConfs){
-  baseWebpackConfig.entry.app = path.join(cwd, "./src/main.js");
+  baseWebpackConfig.entry.app = path.join(cwd, `../${buildConf.mainRepertory}/src/main.js`);
 }
 module.exports = require(path.join(prodBuildPath, './webpack.dev.conf.js'));

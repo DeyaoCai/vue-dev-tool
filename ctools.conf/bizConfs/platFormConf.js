@@ -1,6 +1,6 @@
 const mainRepertory = `electron-pc-desktop`;
 const defaultBranch = `master`;
-const repertoryPath = `woke-space-platform`;
+const repertoryPath = `work-space-platform`;
 const outPutPath = `./${repertoryPath}/proxy/expresServer/www`;
 const repertoryList = [
   {

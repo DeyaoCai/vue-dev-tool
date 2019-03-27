@@ -1,6 +1,6 @@
 const mainRepertory = `vuc`;
 const defaultBranch = `master`;
-const repertoryPath = `woke-space-vuc`;
+const repertoryPath = `work-space-vuc`;
 const outPutPath = `./${repertoryPath}/proxy/expresServer/www`;
 const repertoryList = [
   {
@@ -67,4 +67,8 @@ module.exports = {
   repertoryList,
   packageJson,
   repertoryPath,
+  // copyFilesByDirFromMainRepertory: [
+  //   {ori: "./build", target: "./build"},
+  //   {ori: "./config", target: "./config"},
+  // ],
 };

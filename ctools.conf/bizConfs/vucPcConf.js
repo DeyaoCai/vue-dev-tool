@@ -1,11 +1,16 @@
 const mainRepertory = `vuc-dev-platform`;
 
 const defaultBranch = `master`;
-const repertoryPath = `woke-space-vuc-dev-platform`;
+const repertoryPath = `work-space-vuc-dev-platform`;
 const outPutPath = `./${repertoryPath}/proxy/expresServer/www`;
 const repertoryList = [
   {
     repertory: "https://github.com/DeyaoCai/vuc-dev-platform.git",
+    branch: defaultBranch,
+    disabled: false,
+  },
+  {
+    repertory: "https://github.com/DeyaoCai/cdy-utils.git",
     branch: defaultBranch,
     disabled: false,
   },
