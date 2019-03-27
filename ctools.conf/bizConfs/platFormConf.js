@@ -1,21 +1,24 @@
-const mainRepertory = `vuc-dev-platform`;
-
+const mainRepertory = `electron-pc-desktop`;
 const defaultBranch = `master`;
-const repertoryPath = `woke-space-vuc`;
+const repertoryPath = `woke-space-platform`;
 const outPutPath = `./${repertoryPath}/proxy/expresServer/www`;
 const repertoryList = [
-  {// vuc 手机web项目
-    repertory: "https://github.com/DeyaoCai/vuc.git",
+  {
+    repertory: "https://github.com/DeyaoCai/electron-pc-desktop.git",
     branch: defaultBranch,
     disabled: false,
   },
-  {// vue-ui vuc UI 库
-    repertory: "https://github.com/DeyaoCai/vuc-ui.git",
+  {
+    repertory: "https://gitee.com/all-raines/Tape-frontend.git",
+    branch: defaultBranch,
+    disabled: false,
+  },{
+    repertory: "https://github.com/DeyaoCai/proxy.git",
     branch: defaultBranch,
     disabled: false,
   },
-  {// vuc 工具库
-    repertory: "https://github.com/DeyaoCai/cdy-tools.git",
+  {
+    repertory: "https://github.com/DeyaoCai/ctools.git",
     branch: defaultBranch,
     disabled: false,
   },

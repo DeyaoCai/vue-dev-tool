@@ -92,7 +92,15 @@
     "devCdy": "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.js",
     "getDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence",
     "getCodes": "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
+
+    "vucConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-vucConf",
+    "vucPcConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-vucPcConf",
+    "platFormConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-platFormConf",
+    "temConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-temConf",
+    "temPcConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-temPcConf",
+
     "getDemo": "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
+    "cdevtoolsGetDemo": "cdevtools getDemo",
     "build": "node ./ctools.conf/build.dev.conf.js",
     "proxy": "node ./sections/proxy/app.js",
     "appExpress": "node ./sections/proxy/appExpress.js",
@@ -102,10 +110,6 @@
     "testCtools": "node ./sections/ctools/bin/ctools.js watch",
     "testCtoolsRead": "node ./sections/ctools/bin/ctools.js read--vucUi-cdyUtilsAndVucUi",
     "watch": "node ./sections/ctools/bin/watch.js",
-    "read": "node ./sections/ctools/bin/ctools.js read",
-    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "push": "push --todev",
-    "ctoolsGetCodes": "cdevtools getCodes",
-    "ctoolsGetDemo": "cdevtools getDemo"
+    "read": "node ./sections/ctools/bin/ctools.js read"
   }
 }

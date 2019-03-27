@@ -1,28 +1,19 @@
-const mainRepertory = `vuc`;
+const mainRepertory = `vuc-dev-platform`;
+
 const defaultBranch = `master`;
-const repertoryPath = `woke-space-vuc`;
+const repertoryPath = `woke-space-vuc-dev-platform`;
 const outPutPath = `./${repertoryPath}/proxy/expresServer/www`;
 const repertoryList = [
   {
-    repertory: "https://github.com/DeyaoCai/vuc.git",
-    branch: defaultBranch,
-    disabled: false,
-  },
-  {
-    repertory: "https://github.com/DeyaoCai/vuc-ui.git",
-    branch: defaultBranch,
-    disabled: false,
-  },
-  {
-    repertory: "https://github.com/DeyaoCai/cdy-utils.git",
+    repertory: "https://github.com/DeyaoCai/vuc-dev-platform.git",
     branch: defaultBranch,
     disabled: false,
   },
 ];
 const packageJson = {
-  name: "vue-dev-tool",
+  name: "vuc-group",
   version: "0.0.0",
-  description: "kaifapingtai",
+  description: "",
   author: "deyaocai",
   private: false,
   dependencies: {},
@@ -37,9 +28,8 @@ const packageJson = {
     "not ie <= 8"
   ],
   scripts: {
-    devCdy: "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.js",
     // 开启服务
-    getDependence: "node ./sections/ctools/bin/mergePackgeJson.js getDependence",
+    devCdy: "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.js",
     // 拉取代码 // 开发ctools 工具时使用
     getCodes: "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
     getDemo: "node ./sections/ctools/bin/mergePackgeJson.js getDemo",

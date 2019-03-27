@@ -1,10 +1,12 @@
 'use strict';
 const path = require('path');
-const buildConf = require('./webpack.conf.js');
 const cwd = process.cwd();
-const midPath = `./${buildConf.repertoryPath}/${buildConf.mainRepertory}`;
-const mainRootPath = path.join(cwd, midPath);
+const buildConf = require('./webpack.conf.js');
+// 工作空间根目录
+const mainRootPath = path.join(cwd, `./${buildConf.repertoryPath}/${buildConf.mainRepertory}`);
 const prodBuildPath = path.join(mainRootPath, `./build`);
+
+// 植入别名
 let ctoolsWebpackConf;
 try {
   ctoolsWebpackConf = require('./webpack.conf.json');
@@ -17,6 +19,8 @@ if (baseWebpackConfig.resolve) {
 } else {
   baseWebpackConfig.resolve = ctoolsWebpackConf.resolve;
 }
+// 如果需要 可以 修改入口文件
+// buildConf.getTemplateConfs 在getCodes 时 会根据键值去获取模块，用来生成新的入口文件（这个模块一个返回 {pathBasedOnRoot, content}列表）
 if (buildConf.getTemplateConfs){
   baseWebpackConfig.entry.app = path.join(cwd, "./src/main.js");
 }
