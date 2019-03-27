@@ -1,8 +1,10 @@
 .DS_Store
 node_modules/
+*/node_modules/
 /src/assets/css
 /src/assets/images
 /dist/
+/woke-space-*/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
