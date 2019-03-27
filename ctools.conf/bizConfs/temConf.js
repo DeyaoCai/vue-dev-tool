@@ -93,6 +93,10 @@ module.exports = {
   alias,
   repertoryList,
   packageJson,
-  repertoryPath: `tem-apps`,
-  // getTemplateConfs: "templatFn.tem.js",
+  repertoryPath: `work-space-tem-apps`,
+  getTemplateConfs: "templatFn.tem.js",
+  copyFilesByDirFromMainRepertory: [
+    {ori: "./build", target: "./build"},
+    {ori: "./config", target: "./config"},
+  ],
 };

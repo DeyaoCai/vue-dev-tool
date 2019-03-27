@@ -2,7 +2,7 @@ const fs = require("fs");
 const cwd = process.cwd();
 const path = require("path");
 function join(paths){
-  return path.join(cwd, paths)
+  return path.join(path, paths)
 }
 const excludeList = [`wxm-pc`, `wxm-app`, `ctools`];
 module.exports = function getTemplateConfs(list, smallHump) {
@@ -11,10 +11,8 @@ module.exports = function getTemplateConfs(list, smallHump) {
   const midContent = names.map(item =>
     `import ${smallHump(item)} from "${item}";`
   ).join("\n  ");
-  const midSecContent = names.map(item =>
-    `import ${smallHump(item)} from "${item}";`
-  ).join("\n  ");
   const tailContent = `init([${ names.map(item => smallHump(item)).join(",") }]);`;
+
   return [{
     outPutPath: `/src/main.js`,
     content: `${baseContent}${midContent}\n\n${tailContent}`

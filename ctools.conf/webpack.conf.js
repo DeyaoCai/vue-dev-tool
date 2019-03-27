@@ -11,9 +11,9 @@
    }
  }
 // const defEntry = "vucConf";
-const defEntry = "vucPcConf";
+// const defEntry = "vucPcConf";
 // const defEntry =  "platFormConf";
-//  const defEntry = "temConf";
+ const defEntry = "temConf";
 // const defEntry =  "temPcConf";
 
 const entry = getProcessArgv(/--entry-/)(defEntry);

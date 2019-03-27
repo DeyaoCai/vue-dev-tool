@@ -1,1 +1,17 @@
-{"resolve":{"extensions":[".js",".vue",".json"],"alias":{"@desktopapp":"D:\\work-space\\vue-dev-tool/woke-space-platform/electron-pc-desktop/src","desktopapp":"D:\\work-space\\vue-dev-tool\\woke-space-platform\\electron-pc-desktop\\main.js","@Tape-frontend":"D:\\work-space\\vue-dev-tool/woke-space-platform/Tape-frontend","Tape-frontend":"D:\\work-space\\vue-dev-tool\\woke-space-platform\\Tape-frontend","@httpsServe":"D:\\work-space\\vue-dev-tool/woke-space-platform/proxy","httpsServe":"D:\\work-space\\vue-dev-tool\\woke-space-platform\\proxy","@ctools":"D:\\work-space\\vue-dev-tool/woke-space-platform/ctools/src","ctools":"D:\\work-space\\vue-dev-tool\\woke-space-platform\\ctools\\"}}}
+{
+  "resolve": {
+    "extensions": [
+      ".js",
+      ".vue",
+      ".json"
+    ],
+    "alias": {
+      "@wxm-app": "D:\\front\\vue-dev-tool/work-space-tem-apps/tem-app-wxm",
+      "wxm-app": "D:\\front\\vue-dev-tool/work-space-tem-apps/tem-app-wxm",
+      "@expense": "D:\\front\\vue-dev-tool/work-space-tem-apps/ec-app-expense/src",
+      "app-expense": "D:\\front\\vue-dev-tool/work-space-tem-apps/ec-app-expense",
+      "@common": "D:\\front\\vue-dev-tool/work-space-tem-apps/tem-app-common/src",
+      "app-common": "D:\\front\\vue-dev-tool/work-space-tem-apps/tem-app-common"
+    }
+  }
+}

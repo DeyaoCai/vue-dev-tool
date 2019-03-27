@@ -5,7 +5,10 @@
   "author": "deyaocai",
   "private": false,
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-dev-server": "^3.2.1"
+  },
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
@@ -16,16 +19,19 @@
     "not ie <= 8"
   ],
   "scripts": {
-    "devCdy": "webpack-dev-server --inline --progress --config ctools.conf/webpack.dev.conf.js",
+    "devCdy": "node ./ctools.conf/webpack.dev.conf.js",
     "getDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence",
     "getCodes": "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
-
+    "vucConfDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence  --entry-vucConf",
     "vucConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-vucConf",
+    "vucPcDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence  --entry-vucPcConf",
     "vucPcConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-vucPcConf",
+    "platFormConfDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence  --entry-platFormConf",
     "platFormConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-platFormConf",
+    "temConfDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence  --entry-temConf",
     "temConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-temConf",
+    "temPcConfDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence --entry-temPcConf",
     "temPcConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-temPcConf",
-
     "getDemo": "node ./sections/ctools/bin/mergePackgeJson.js getDemo",
     "cdevtoolsGetDemo": "cdevtools getDemo",
     "build": "node ./ctools.conf/build.dev.conf.js",
