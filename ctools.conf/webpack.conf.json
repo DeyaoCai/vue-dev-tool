@@ -1,1 +1,1 @@
-{"resolve":{"extensions":[".js",".vue",".json"],"alias":{"@ctools":"D:\\front\\vue-dev-tool/work-space-platform/ctools/src","ctools":"D:\\front\\vue-dev-tool\\work-space-platform\\ctools\\"}}}
+{"resolve":{"extensions":[".js",".vue",".json"],"alias":{"@wxm-app":"D:\\front\\vue-dev-tool/work-space-tem-apps/tem-app-wxm","wxm-app":"D:\\front\\vue-dev-tool/work-space-tem-apps/tem-app-wxm","@common":"D:\\front\\vue-dev-tool/work-space-tem-apps/tem-app-common/src","app-common":"D:\\front\\vue-dev-tool/work-space-tem-apps/tem-app-common"}}}
