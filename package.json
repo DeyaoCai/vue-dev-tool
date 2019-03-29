@@ -22,6 +22,8 @@
     "devCdy": "node ./ctools.conf/webpack.dev.conf.js",
     "devCdyOri": "`webpack-dev-server --inline --progress --config ctools.conf/hot-server.dev.conf.js",
     "getAlias": "node ./sections/ctools/bin/mergePackgeJson.js updataAllAlias",
+    "getDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence",
+    "getCodes": "node ./sections/ctools/bin/mergePackgeJson.js getCodes",
     "vucDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence  --entry-vucConf",
     "vucConf": "node ./sections/ctools/bin/mergePackgeJson.js getCodes --entry-vucConf",
     "vucPcDependence": "node ./sections/ctools/bin/mergePackgeJson.js getDependence  --entry-vucPcConf",

@@ -4,16 +4,48 @@ module.exports = {
   "repertoryList": [{
     "repertory": "https://github.com/DeyaoCai/electron-pc-desktop.git",
     "branch": "master",
-    "disabled": false
+    "disabled": true,
+    "branches": {
+      "local": ["* master", ""],
+      "remote": ["remotes/origin/master"],
+      "default": "master",
+      "current": "* master"
+    },
+    "name": "electron-pc-desktop"
   }, {
     "repertory": "https://gitee.com/all-raines/Tape-frontend.git",
-    "branch": "master",
-    "disabled": false
+    "branch": "dev",
+    "disabled": true,
+    "branches": {
+      "local": ["* dev", "master", ""],
+      "remote": ["remotes/origin/dev", "remotes/origin/master"],
+      "default": "dev",
+      "current": "* dev"
+    },
+    "name": "Tape-frontend"
   }, {
     "repertory": "https://github.com/DeyaoCai/proxy.git",
     "branch": "master",
-    "disabled": false
-  }, {"repertory": "https://github.com/DeyaoCai/ctools.git", "branch": "master", "disabled": false}],
+    "disabled": true,
+    "branches": {
+      "local": ["* master", ""],
+      "remote": ["remotes/origin/master"],
+      "default": "master",
+      "current": "* master"
+    },
+    "name": "proxy"
+  }, {
+    "repertory": "https://github.com/DeyaoCai/ctools.git",
+    "branch": "master",
+    "disabled": false,
+    "branches": {
+      "local": ["* master", ""],
+      "remote": ["remotes/origin/ISSUES-00", "remotes/origin/dev", "remotes/origin/master", "remotes/origin/test"],
+      "default": "master",
+      "current": "* master"
+    },
+    "name": "ctools"
+  }],
   "packageJson": {
     "name": "vuc-group",
     "version": "0.0.0",

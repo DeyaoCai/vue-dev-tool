@@ -29,6 +29,7 @@ const defEntry = "vucPcConf";
 const entry = getProcessArgv(/--entry-/)(defEntry);
 const confList = fs.readdirSync(path.join(__dirname, "./bizConfs"));
 
+console.log(entryConfig)
 const outputEntryMap = {
   temPcConf: "temPcConf.js",
   temConf: "temConf.js",
