@@ -3,12 +3,12 @@ module.exports = {
   "outPutPath": "./work-space-platform/proxy/expresServer/www",
   "repertoryList": [{
     "repertory": "https://github.com/DeyaoCai/electron-pc-desktop.git",
-    "branch": "master",
+    "branch": "testssss",
     "disabled": false,
     "branches": {
-      "local": ["* master", ""],
+      "local": ["* master", "tests", "testssss", ""],
       "remote": ["remotes/origin/master"],
-      "default": "master",
+      "default": "testssss",
       "current": "* master"
     },
     "name": "electron-pc-desktop"
@@ -17,10 +17,10 @@ module.exports = {
     "branch": "dev",
     "disabled": false,
     "branches": {
-      "local": ["* dev", "master", ""],
+      "local": ["master", ""],
       "remote": ["remotes/origin/dev", "remotes/origin/master"],
       "default": "dev",
-      "current": "* dev"
+      "current": "* master"
     },
     "name": "Tape-frontend"
   }, {
